@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Stock Analysis</h1>
+
+    <form method="post">
+      <label for="ticker">Ticker:</label>
+      <input id="ticker" name="ticker" type="text" required>
+      <button type="submit">Run</button>
+    </form>
+
+    {% if result %}
+      <p>{{ result }}</p>
+    {% endif %}
+  </body>
+</html>

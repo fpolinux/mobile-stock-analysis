@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Stock Analysis</h1>
+    <h1>Basic Stock Stats</h1>
 
-    <form method="post">
-      <label for="ticker">Ticker:</label>
-      <input id="ticker" name="ticker" type="text" required>
-      <button type="submit">Run</button>
+    <form method="POST">
+      <input name="ticker" type="text" placeholder="Enter ticker" required>
+      <button type="submit" name="action" value="stats">Get Quant Stats</button>
+      <button type="submit" name="action" value="kpis">Get Fundamental Stats</button>
     </form>
 
+    {% if error %}
+      <p>{{ error }}</p>
+    {% endif %}
+
     {% if result %}
-      <p>{{ result }}</p>
+      <pre>{{ result }}</pre>
     {% endif %}
   </body>
 </html>
